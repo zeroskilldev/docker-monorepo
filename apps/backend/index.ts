@@ -6,10 +6,7 @@ const app = express();
 app.use(express.json());
 
 app.get("/todos", async (req, res) => {
-
-    const todos = await client.todos.findMany();
-
-    res.json(todos);
+    res.send("hi there");
 })
 
 app.post("/todos", async (req, res) => {
