@@ -24,4 +24,4 @@ jobs:
           context: .
           file: ./dockerfile/Dockerfile.backend
           push: true
-          tags: zeroskilldev/todo-app:${{ github.sha }}
+          tags: zeroskilldev/todo-app-backend:${{ github.sha }}

@@ -1,0 +1,27 @@
+# name: deploying the backend
+
+# on:
+#   push:
+#     branches: [ main ]
+
+
+# jobs: 
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout the code
+#         uses: actions/checkout@v2
+
+#       - name: Login to docker
+#         uses: docker/login-action@v2
+#         with: 
+#           username: ${{ secrets.DOCKERHUB_USERNAME }}
+#           password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
+#       - name: build the image
+#         uses: docker/build-push-action@v4
+#         with:
+#           context: .
+#           file: ./dockerfile/Dockerfile.ws
+#           push: true
+#           tags: zeroskilldev/todo-app-ws:${{ github.sha }}
