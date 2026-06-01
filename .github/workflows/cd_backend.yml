@@ -33,5 +33,5 @@ jobs:
           username: ubuntu
           key: ${{ secrets.KEY }}
           port: 22
-          run: |
+          script: |
             docker stop todo_backend && docker run --name todo_backend -d -p 3001:3001 zeroskilldev/todo-app-backend:${{ github.sha }}
