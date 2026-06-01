@@ -39,8 +39,4 @@ jobs:
 
             docker pull zeroskilldev/todo-app-backend:${{ github.sha }}
 
-            docker run -d \
-              --name todo-app-backend \
-              -p 3001:3001 \
-              -e DATABASE_URL=postgresql://neondb_owner:npg_4SKF7pafbTBo@ep-damp-union-appcuqti-pooler.c-7.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require
-              zeroskilldev/todo-app-backend:${{ github.sha }}
+            docker run -d --name todo-app-backend -p 3001:3001 zeroskilldev/todo-app-backend:${{ github.sha }}
