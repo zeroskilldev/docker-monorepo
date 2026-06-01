@@ -25,3 +25,13 @@ jobs:
           file: ./dockerfile/Dockerfile.backend
           push: true
           tags: zeroskilldev/todo-app-backend:${{ github.sha }}
+
+      - name: Execute remote SSH commands using SSH key
+        uses: appleboy/ssh-action@v1
+        with:
+          host: 32.236.85.226 
+          username: ubuntu
+          key: ${{ secrets.KEY }}
+          port: 22
+          run: |
+            docker stop todo_backend && docker run --name todo_backend -d -p 3001:3001 zeroskilldev/todo-app-backend:${{ github.sha }}
